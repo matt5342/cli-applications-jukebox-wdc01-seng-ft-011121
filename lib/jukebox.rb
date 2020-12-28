@@ -19,25 +19,17 @@ end
 
 def play(songs)
   yes = 0
-  index = 0
+
   puts "Please enter a song name or number:"
   input = gets.strip
   
-  songs.each do |song|
-    if input == song
-      puts "Playing #{song}"
-      yes = 1
-      break
-    end
-    if input.length > 1
-      if songs[input.to_i] == songs[(index.to_s + 1)]
+  songs.each_with_index do |song, index|
+      if input == song || (input.to_i - 1) == index
         puts "Playing #{song}"
         yes = 1
-        break
       end
-    end
-    index += 1
   end  
+
     if yes == 0
       puts "Invalid input, please try again"
     end
