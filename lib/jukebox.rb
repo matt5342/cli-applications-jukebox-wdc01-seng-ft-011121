@@ -53,7 +53,7 @@ def run
   
   while input != "exit" do
     if input == "list"
-      list(songs)
+      list
     elsif input == "play"
       play(songs)
     elsif input == "help"
